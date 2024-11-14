@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Courier New', Courier, monospace; 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .invitation {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message" style="font-style: italic; font-size: 36px;">hello world</div>
+    <div id="invitation" class="hidden invitation">
+        <h2>A garota de programa é você mas o convite eu consigo fazer! Aceita sair comigo?</h2>
+        <button class="button" onclick="respond('aceitar')">Aceitar</button>
+        <button class="button" onclick="respond('recusar')">Recusar</button>
+    </div>
+
+    <script>
+        document.body.addEventListener('click', function() {
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('invitation').classList.remove('hidden');
+        });
+
+        function respond(answer) {
+            if (answer === 'aceitar') {
+                alert('Tempo de qualidade garantido! ;) Te amo!');
+            } else {
+                alert('Vamos de qualquer forma!');
+            }
+        }
+    </script>
+
+</body>
+</html>
